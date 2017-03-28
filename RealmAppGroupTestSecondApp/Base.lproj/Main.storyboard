@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,19 +24,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xud-bV-xaa">
-                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="170.5" y="285" width="34" height="30"/>
+                                <state key="normal" title="Sync"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tcg-pK-QPe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecM-fh-sdR">
+                                <rect key="frame" x="167.5" y="352" width="39" height="30"/>
+                                <state key="normal" title="Fetch"/>
+                                <connections>
+                                    <action selector="fetchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DV2-zI-GZP"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7tl-97-wny">
+                                <rect key="frame" x="16" y="390" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfM-R2-zV7">
+                                <rect key="frame" x="149" y="428" width="77" height="30"/>
+                                <state key="normal" title="Write Once"/>
+                                <connections>
+                                    <action selector="writeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x2S-gw-QKP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xud-bV-xaa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FKh-E1-apj"/>
+                            <constraint firstItem="tfM-R2-zV7" firstAttribute="top" secondItem="7tl-97-wny" secondAttribute="bottom" constant="8" id="1LE-NS-Dhs"/>
+                            <constraint firstItem="xud-bV-xaa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.9" id="FKh-E1-apj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7tl-97-wny" secondAttribute="trailing" id="IFy-w9-Uxs"/>
+                            <constraint firstItem="7tl-97-wny" firstAttribute="top" secondItem="ecM-fh-sdR" secondAttribute="bottom" constant="8" id="MOm-0M-Bd0"/>
                             <constraint firstItem="xud-bV-xaa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N8a-p2-etx"/>
+                            <constraint firstItem="ecM-fh-sdR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.1" id="SlE-9U-8ZM"/>
+                            <constraint firstItem="ecM-fh-sdR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hK6-kk-7vF"/>
+                            <constraint firstItem="7tl-97-wny" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oMN-Oh-b5R"/>
+                            <constraint firstItem="tfM-R2-zV7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="skb-uh-F68"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fetchButton" destination="ecM-fh-sdR" id="uTq-v5-Mbq"/>
+                        <outlet property="textField" destination="7tl-97-wny" id="pmA-cf-tCo"/>
+                        <outlet property="writeButton" destination="tfM-R2-zV7" id="aoZ-su-P7D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
