@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmAppGroupTestFramework
+import OneSignal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        OneSignal.initWithLaunchOptions(launchOptions, appId: "c487d6b8-cc2d-4736-9a77-c28d7baf398d")
         return true
     }
 
@@ -41,6 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("PN sync...")
+        SyncClient.sync {
+            print("PN sync done")
+            completionHandler(.noData)
+        }
+    }
 }
 
