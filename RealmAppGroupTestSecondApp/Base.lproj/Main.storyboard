@@ -31,8 +31,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecM-fh-sdR">
-                                <rect key="frame" x="167.5" y="352" width="39" height="30"/>
-                                <state key="normal" title="Fetch"/>
+                                <rect key="frame" x="16" y="352" width="79" height="30"/>
+                                <state key="normal" title="Fetch Once"/>
                                 <connections>
                                     <action selector="fetchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DV2-zI-GZP"/>
                                 </connections>
@@ -78,13 +78,22 @@
                                     <action selector="writeOtherRealmButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WDP-fs-81R"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyI-vC-QF3">
+                                <rect key="frame" x="252" y="352" width="107" height="30"/>
+                                <state key="normal" title="Auto Fetch OFF"/>
+                                <connections>
+                                    <action selector="autoFetchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BH1-Ge-D3z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tfM-R2-zV7" firstAttribute="top" secondItem="7tl-97-wny" secondAttribute="bottom" constant="8" id="1LE-NS-Dhs"/>
                             <constraint firstItem="vgk-8g-GRM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8Cd-WZ-ryz"/>
+                            <constraint firstItem="CyI-vC-QF3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="D95-gt-Lm3"/>
                             <constraint firstItem="xud-bV-xaa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.9" id="FKh-E1-apj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7tl-97-wny" secondAttribute="trailing" id="IFy-w9-Uxs"/>
+                            <constraint firstItem="ecM-fh-sdR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IQe-kD-TPn"/>
                             <constraint firstItem="7tl-97-wny" firstAttribute="top" secondItem="ecM-fh-sdR" secondAttribute="bottom" constant="8" id="MOm-0M-Bd0"/>
                             <constraint firstItem="xud-bV-xaa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N8a-p2-etx"/>
                             <constraint firstItem="WXr-ca-t88" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Qrv-qC-oaK"/>
@@ -94,13 +103,14 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vgk-8g-GRM" secondAttribute="bottom" constant="8" id="d37-Cy-cWR"/>
                             <constraint firstItem="WXr-ca-t88" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="goa-mQ-jlB"/>
                             <constraint firstItem="4cl-b4-mht" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="h1i-bc-Voc"/>
-                            <constraint firstItem="ecM-fh-sdR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hK6-kk-7vF"/>
+                            <constraint firstItem="7tl-97-wny" firstAttribute="top" secondItem="CyI-vC-QF3" secondAttribute="bottom" constant="8" id="kl2-3r-Byw"/>
                             <constraint firstItem="BIO-Sf-Vxg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="krA-ws-dp6"/>
                             <constraint firstItem="7tl-97-wny" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oMN-Oh-b5R"/>
                             <constraint firstItem="tfM-R2-zV7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="skb-uh-F68"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="autoFetchButton" destination="CyI-vC-QF3" id="C0Y-AZ-7lx"/>
                         <outlet property="fetchButton" destination="ecM-fh-sdR" id="uTq-v5-Mbq"/>
                         <outlet property="syncOtherButton" destination="vgk-8g-GRM" id="yNC-05-OMu"/>
                         <outlet property="syncOtherRealmButton" destination="WXr-ca-t88" id="f4Y-Hs-feN"/>
